@@ -48,10 +48,11 @@
   <gap:splash gap:platform="ios" height="768" src="res/screen/ios/screen-ipad-landscape.png" width="1024" />
   <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
   <access origin="http://127.0.0.1*" />
+  <plugins>
+    <!--Permissions for iOS camera-->
+    <plugin name="Camera" value="CDVCamera" />
 
-  <!--Permissions for iOS camera-->
-  <plugin name="Camera" value="CDVCamera" />
-
-  <!--Permissions for Android camera-->
-  <!--<plugin name="Camera" value="org.apache.cordova.CameraLauncher" />-->
+    <!--Permissions for Android camera-->
+    <!--<plugin name="Camera" value="org.apache.cordova.CameraLauncher" />-->
+  </plugins>
 </widget>
