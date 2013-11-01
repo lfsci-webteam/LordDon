@@ -27,6 +27,8 @@
 
     <script type="text/javascript">
 
+        capturePhoto();
+
         function capturePhoto() {
             sessionStorage.removeItem('imagepath');
             // Take picture using device camera and retrieve image as base64-encoded string
@@ -59,7 +61,7 @@
             var newFileName = n + ".jpg";
             var myFolderApp = "MyAppFolder";
 
-            window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, function (fileSys) {
+            window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSys) {
                 //The folder is created if doesn't exist
                 fileSys.root.getDirectory(myFolderApp,
                 { create: true, exclusive: false },
