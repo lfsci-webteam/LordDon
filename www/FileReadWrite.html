@@ -28,6 +28,18 @@
 
     <script type="text/javascript">
 
+        // Wait for device API libraries to load
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        // device APIs are available
+        //
+        function onDeviceReady() {
+            pictureSource = navigator.camera.PictureSourceType;
+            destinationType = navigator.camera.DestinationType;
+        }
+
+
+        // Capture a photo
         capturePhoto();
 
         function capturePhoto() {
