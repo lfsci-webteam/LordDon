@@ -29,14 +29,14 @@
     <script type="text/javascript">
 
         // Wait for device API libraries to load
-        //document.addEventListener("deviceready", onDeviceReady, false);
+        document.addEventListener("deviceready", onDeviceReady, false);
 
         // device APIs are available
         //
-        //function onDeviceReady() {
+        function onDeviceReady() {
         //    pictureSource = navigator.camera.PictureSourceType;
         //    destinationType = navigator.camera.DestinationType;
-        //}
+        }
 
 
         // Capture a photo
@@ -101,7 +101,7 @@
         }
 
         function resOnError(error) {
-            alert(error.code);
+            alert('Errored because: ' + error.code);
         }
     </script>
 </body>
