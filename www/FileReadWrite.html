@@ -24,24 +24,65 @@
             <h2>File Read Write</h2>
         </div>
     </div>
-    <img id="imgProfile" />
+    <button onclick="capturePhoto();">Capture Photo</button>
+
+    <img src="" id="NewImage" />
+
+
+
 
     <script type="text/javascript">
+
+        // Find & show all images
+
+        function success(entries) {
+            var i;
+            for (i = 0; i < entries.length; i++) {
+                console.log(entries[i].name);
+            }
+        }
+
+        function fail(error) {
+            alert("Failed to list directory contents: " + error.code);
+        }
+
+        // Get a directory reader
+        var directoryReader = dirEntry.createReader();
+
+        // Get a list of all the entries in the directory
+        directoryReader.readEntries(success, fail);
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // Wait for device API libraries to load
         //document.addEventListener("deviceready", onDeviceReady, false);
 
         // device APIs are available
-        //
         //function onDeviceReady() {
-        //    pictureSource = navigator.camera.PictureSourceType;
-        //    destinationType = navigator.camera.DestinationType;
+        // this can be on-load type functions
         //}
 
 
         // Capture a photo
-        capturePhoto();
-
         function capturePhoto() {
             sessionStorage.removeItem('imagepath');
             // Take picture using device camera and retrieve image as base64-encoded string
@@ -52,7 +93,8 @@
                 targetWidth: 400,
                 targetHeight: 400
             });
-           // navigator.camera.getPicture(onPhotoURISuccess, fail, { quality: 25, destinationType: Camera.DestinationType.FILE_URI, sourceType: source, targetWidth: 400, targetHeight: 400, });
+
+            // navigator.camera.getPicture(onPhotoURISuccess, fail, { quality: 25, destinationType: Camera.DestinationType.FILE_URI, sourceType: source, targetWidth: 400, targetHeight: 400, });
             // sourceType: options are "navigator.camera.PictureSourceType.CAMERA" "navigator.camera.PictureSourceType.PHOTOLIBRARY"
         }
 
@@ -89,15 +131,11 @@
         function successMove(entry) {
             //Store imagepath in session for future use
             // like to store it in database
-            sessionStorage.setItem('imagepath', entry.fullPath);
+            //sessionStorage.setItem('imagepath', entry.fullPath);
+            //alert(entry.fullPath);
 
-
-            alert(entry.fullPath);
-
-            var imgProfile = document.getElementById('imgProfile');
-            imgProfile.src = entry.fullPath;
-
-
+            var NewImage = document.getElementById('NewImage');
+            NewImage.src = entry.fullPath;
         }
 
         // Called if something bad happens.
