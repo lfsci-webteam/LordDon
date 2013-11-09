@@ -24,12 +24,6 @@
             <h2>File Read Write</h2>
         </div>
     </div>
-    <button onclick="capturePhoto();">Capture Photo</button>
-
-    <img src="" id="NewImage" />
-
-
-
 
     <script type="text/javascript">
 
@@ -52,7 +46,7 @@
         // Get a list of all the entries in the directory
         directoryReader.readEntries(success, fail);
 
-        
+
 
 
 
@@ -148,5 +142,13 @@
             alert('Errored because: ' + error.code);
         }
     </script>
+
+
+
+
+    <button onclick="capturePhoto();">Capture Photo</button>
+
+    <img src="" id="NewImage" />
+
 </body>
 </html>
