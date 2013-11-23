@@ -32,10 +32,8 @@
         var fileList = document.getElementById("fileList");
         fileList.innerHTML = "Files/Folders: ";
 
-        var Img1 = document.getElementById("Img1");
-        var Img2 = document.getElementById("Img2");
-        var Img3 = document.getElementById("Img3");
-        var Img4 = document.getElementById("Img4");
+        var imageList = document.getElementById("imageList");
+        imageList.innerHTML = "";
 
         function fail(error) {
             alert("Failed to list directory contents: " + error.code);
@@ -47,9 +45,8 @@
                 console.log(entries[i].name);
 
                 fileList.innerHTML += entries[i].name + "<br />";
-                Img1.src = entries[i].FILE_URI;
-                Img2.src = entries[i].fullPath;
-                Img3.src = entries[i].imageURI;
+
+                imageList.innerHTML += '<img src="' + entries[i].fullPath + '" /><br />';
             }
         }
 
@@ -164,14 +161,8 @@
     <img src="" id="NewImage" />
     <div id="fileList"></div>
     <br />
-    1<img src="" id="Img1" />1
-    <br />
-    2<img src="" id="Img2" />2
-    <br />
-    3<img src="" id="Img3" />3
-    <br />
-    4<img src="" id="Img4" />4
-    
+    <div id="imageList"></div>
+   
 
 </body>
 </html>
