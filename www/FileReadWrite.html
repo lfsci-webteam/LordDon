@@ -30,7 +30,7 @@
         // Find & show all images
 
         var fileList = document.getElementById("fileList");
-        fileList.innerHTML = "";
+        fileList.innerHTML = "Files/Folders: ";
 
         function fail(error) {
             alert("Failed to list directory contents: " + error.code);
@@ -45,20 +45,20 @@
             }
         }
 
-        function onFileSystemSuccess(fs) {
-
-            alert('Opened file system: ' + fs.name);
-
-            // Get a directory reader
-            var directoryReader = fs.root.createReader();
-
-            // Get a list of all the entries in the directory
+        function onGetDirectorySuccess(directory) {
+            //read entries in directory
+            var directoryReader = directory.createReader();
             directoryReader.readEntries(success, fail);
+        }
 
+        function onFileSystemSuccess(fs) {
+          
+            // Get the directory
+            //var directoryReader = fs.root.createReader();
+            fs.root.getDirectory("MyAppFolder", { create: false }, onGetDirectorySuccess, fail);
         }
 
         function onDeviceReady() {
-            alert("entered onDeviceReady");
             // Request file system
             window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
         }
