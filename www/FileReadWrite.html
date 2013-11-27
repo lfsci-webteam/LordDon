@@ -59,8 +59,12 @@
         function onFileSystemSuccess(fs) {
           
             // Get the directory
-            //var directoryReader = fs.root.createReader();
             fs.root.getDirectory("MyAppFolder", { create: false }, onGetDirectorySuccess, fail);
+
+            // To read files/folders from Root
+            //var directoryReader = fs.root.createReader();
+            // directoryReader.readEntries(success, fail);
+
         }
 
         function onDeviceReady() {
@@ -69,13 +73,7 @@
         }
 
         document.addEventListener("deviceready", onDeviceReady, false);
-
-
-
-
-
-
-
+        
 
         // Wait for device API libraries to load
         //document.addEventListener("deviceready", onDeviceReady, false);
@@ -140,6 +138,9 @@
 
             var NewImage = document.getElementById('NewImage');
             NewImage.src = entry.fullPath;
+
+            // update pictures list
+            onDeviceReady();
         }
 
         // Called if something bad happens.
