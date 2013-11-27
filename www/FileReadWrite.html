@@ -139,8 +139,7 @@
             var NewImage = document.getElementById('NewImage');
             NewImage.src = entry.fullPath;
 
-            // update pictures list
-            onDeviceReady();
+            imageList.innerHTML += '<img src="' + entry.fullPath + '" width="90" />';
         }
 
         // Called if something bad happens.
