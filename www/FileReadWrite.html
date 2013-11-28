@@ -139,6 +139,8 @@
             var NewImage = document.getElementById('NewImage');
             NewImage.src = entry.fullPath;
 
+            // update file list and images
+            fileList.innerHTML += entries[i].name + "<br />";
             imageList.innerHTML += '<img src="' + entry.fullPath + '" width="90" />';
         }
 
