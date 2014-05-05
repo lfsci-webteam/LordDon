@@ -10,8 +10,6 @@
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.3.2.css" />
 
     <script type="text/javascript" src="phonegap.js"></script>
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery.mobile-1.3.2.js"></script>
@@ -52,7 +50,7 @@
             smallImage.style.display = 'block';
 
             // Show the captured photo
-            // The in-line CSS rules are used to resize the image
+            // The inline CSS rules are used to resize the image
             //
             smallImage.src = "data:image/jpeg;base64," + imageData;
         }
@@ -72,7 +70,7 @@
             largeImage.style.display = 'block';
 
             // Show the captured photo
-            // The in-line CSS rules are used to resize the image
+            // The inline CSS rules are used to resize the image
             //
             largeImage.src = imageURI;
         }
@@ -114,7 +112,6 @@
             alert('Failed because: ' + message);
         }
 
-
     </script>
 
     <div data-role="header">
@@ -124,12 +121,16 @@
         </div>
     </div>
 
-    <button onclick="capturePhoto();">Capture Photo</button> <br>
-    <button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
-    <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
-    <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
-    <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
-    <img style="display:none;" id="largeImage" src="" />
-
+    <button onclick="capturePhoto();">Capture Photo</button>
+    <br>
+    <button onclick="capturePhotoEdit();">Capture Editable Photo</button>
+    <br>
+    <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button>
+    <br>
+    <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button>
+    <br>
+    <br />
+    <img style="display: none; width: 100%;" id="smallImage" src="" />
+    <img style="display: none; width: 200%;" id="largeImage" src="" />
 </body>
 </html>
