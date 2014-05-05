@@ -140,7 +140,8 @@
             NewImage.src = entry.fullPath;
 
             // update file list and images
-            fileList.innerHTML += entries[i].name + "<br />";
+            //fileList.innerHTML += entries[i].name + "<br />";
+            fileList.innerHTML += entries[i].fullPath + "<br />";
             imageList.innerHTML += '<img src="' + entry.fullPath + '" width="90" />';
         }
 
