@@ -66,4 +66,9 @@
 
 
   </plugins>
+
+  <feature name="Camera">
+    <param name="ios-package" value="CDVCamera" />
+  </feature>
+
 </widget>
