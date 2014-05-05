@@ -52,10 +52,6 @@
     <!--iOS camera-->
     <plugin name="Camera" value="CDVCamera" />
 
-    <feature name="Camera">
-      <param name="ios-package" value="CDVCamera" />
-    </feature>
-
     <!--iOS File System Access-->
     <plugin name="File" value="CDVFile" />
     <plugin name="FileTransfer" value="CDVFileTransfer" />
@@ -67,10 +63,18 @@
     <plugin name="File" value="org.apache.cordova.FileUtils" />
     <plugin name="FileTransfer" value="org.apache.cordova.FileTransfer" />
 
-
-
   </plugins>
 
+  <feature name="Camera">
+    <param name="ios-package" value="CDVCamera" />
+  </feature>
+
+  <feature name="File">
+    <param name="ios-package" value="CDVFile" />
+  </feature>
+  <feature name="FileTransfer">
+    <param name="ios-package" value="CDVFileTransfer" />
+  </feature>
 
 
 </widget>
